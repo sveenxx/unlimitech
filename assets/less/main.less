@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+@import "variables.less";
+@import "header.less";
+@import "mobile-menu.less";
+@import "cart.less";
+@import "hero.less";
+
 * {
     padding: 0;
     margin: 0;
@@ -8,4 +14,64 @@
 html,
 body {
     height: 100%;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: @text-color;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1400px;
+}
+
+body.is-locked {
+    overflow: hidden;
+}
+
+.slick-dots {
+    bottom: -32px;
+
+    li {
+        margin: 0 10px;
+
+        &::after {
+            transition: all .3s ease-in-out;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: transparent;
+            content: "";
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border: 1px solid @brand-primary;
+            opacity: 0;
+        }
+
+        button {
+            &::before {
+                opacity: 100;
+                color: @text-color;
+            }
+        }
+    }
+
+    .slick-active {
+        &::after {
+            opacity: 1;
+        }
+
+        button {
+            &::before {
+                font-size: 4px;
+                color: @brand-primary !important;
+            }
+        }
+    }
 }
