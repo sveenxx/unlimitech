@@ -34,6 +34,26 @@ import "../../assets/less/main.less";
     });
   };
 
+  const initProductsSlider = () => {
+    $(".products__slider").slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: true,
+      responsive: [
+        { breakpoint: 1200, settings: { slidesToShow: 3 } },
+        { breakpoint: 992, settings: { slidesToShow: 2 } },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            centerMode: false,
+          },
+        },
+      ],
+    });
+  };
+
   function refreshBodyLock() {
     const anyOpen =
       $("#search.is-open, #cart.is-open, #mobileMenu.is-open").length > 0;
@@ -355,10 +375,76 @@ import "../../assets/less/main.less";
     });
   };
 
+  const initSearchOverlay = () => {
+    const $search = $("#search");
+    if ($search.length === 0) return;
+    const $open = $("#btn-search");
+    const $close = $search.find(".search__close");
+    const $backdrop = $search.find(".search__backdrop");
+    const $input = $search.find(".search__input");
+    const $desktopForm = $(".search-form");
+    let teardownFocusTrap = null;
+
+    function open() {
+      $search.addClass("is-open").attr("aria-hidden", "false");
+      refreshBodyLock();
+      setTimeout(function () {
+        const el = $input.get(0);
+        if (el && typeof el.focus === "function") {
+          try {
+            el.focus({ preventScroll: true });
+          } catch (e) {
+            el.focus();
+          }
+        }
+        if (teardownFocusTrap) {
+          teardownFocusTrap();
+        }
+        teardownFocusTrap = setupFocusTrap($search);
+      }, 50);
+    }
+
+    function close() {
+      $search.removeClass("is-open is-closing").attr("aria-hidden", "true");
+      if (teardownFocusTrap) {
+        teardownFocusTrap();
+        teardownFocusTrap = null;
+      }
+      refreshBodyLock();
+    }
+
+    $open.on("click", function (e) {
+      e.preventDefault();
+      open();
+    });
+    // Desktop: clicking the readonly input or button opens overlay
+    $desktopForm.on("click", function (e) {
+      e.preventDefault();
+      open();
+    });
+    $desktopForm.on("submit", function (e) {
+      e.preventDefault();
+      open();
+    });
+    $close.on("click", function (e) {
+      e.preventDefault();
+      close();
+    });
+    $backdrop.on("click", function () {
+      close();
+    });
+
+    $(document).on("keydown", function (e) {
+      if (e.key === "Escape" && $search.hasClass("is-open")) close();
+    });
+  };
+
   $(function () {
     initHeroSlider();
     initMobileMenu();
     initCartDrawer();
+    initProductsSlider();
     initMegaMenu();
+    initSearchOverlay();
   });
 })(jQuery);
