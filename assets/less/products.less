@@ -1,0 +1,227 @@
+.products {
+    padding: 20px 0 47px;
+    overflow: hidden;
+
+    h2 {
+        .section-title();
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    &__toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 56px;
+        flex-wrap: wrap;
+    }
+
+    &__sep {
+        color: @text-color;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    &__tabs {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        overflow-x: auto;
+    }
+
+    &__tab {
+        font-size: 32px;
+        font-weight: 400;
+        color: @text-color;
+        cursor: pointer;
+    }
+
+    &__tab.is-active {
+        color: @brand-primary;
+        font-weight: 800;
+    }
+
+    &__all {
+        font-size: 12px;
+        color: #292929;
+    }
+
+    &__slider {
+        margin: 0 -10px;
+        position: relative;
+    }
+
+    &__loading {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(2px);
+        z-index: 5;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .2s ease-in-out;
+    }
+
+    &__slider.is-loading &__loading {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.product {
+    background: #fff;
+    border-radius: @radius;
+    overflow: hidden;
+    margin: 0 10px;
+    position: relative;
+
+    &__img {
+        background: @brand-light;
+        border-radius: @radius;
+
+        img {
+            width: 100%;
+            display: block;
+            border-radius: @radius;
+        }
+    }
+
+    &__body {
+        padding: 8px 4px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__title {
+        font-size: 15px;
+        font-weight: 500;
+        color: @text-color;
+
+        span {
+            position: absolute;
+            inset: 0;
+        }
+    }
+
+    &__meta {
+        color: #595959;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    &__price {
+        color: @brand-primary;
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    &__badges {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__badges-item {
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+        padding: 1px 4px;
+        width: fit-content;
+        border-radius: 2px;
+
+        &--green {
+            background: @badge-green;
+        }
+
+        &--magenta {
+            background: @badge-magenta;
+        }
+
+        &--red {
+            background: @accent-red;
+        }
+    }
+
+    &__like,
+    &__add {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        right: 8px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        opacity: 0;
+        transition: opacity .3s, transform .3s, color .3s ease-out;
+        z-index: 2;
+    }
+
+    &__like {
+        top: 8px;
+        background-color: hsla(0, 0%, 100%, .75);
+        border: 1px solid hsla(0, 0%, 100%, 1);
+        backdrop-filter: blur(8px);
+        color: @text-color;
+    }
+
+    &__like:hover {
+        color: @danger;
+    }
+
+    &__add {
+        background: @brand-primary;
+        border: 1px solid @brand-primary;
+        bottom: 14px;
+        transform: translateY(100%);
+    }
+
+    &:hover {
+
+        .product__like,
+        .product__add {
+            opacity: 1;
+        }
+
+        .product__add {
+            transform: translateY(0);
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .products {
+        &__tab {
+            font-size: 24px;
+        }
+
+        &__tabs {
+            gap: 12px;
+        }
+
+        /* reveal next slide peek on mobile */
+        &__slider {
+            .slick-list {
+                padding-left: 0 !important;
+                padding-right: 20% !important;
+                /* show ~1/4 of next slide */
+            }
+        }
+    }
+
+    /* width for slide to allow peeking next card */
+    .product {
+        width: 80vw;
+    }
+}

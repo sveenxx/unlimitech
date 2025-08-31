@@ -843,7 +843,344 @@
                 </div>
             </div>
         </section>
+
+        <!-- Products -->
+        <section class="products">
+            <div class="container">
+                <div class="products__toolbar">
+                    <div class="products__tabs">
+                        <span class="products__tab is-active" data-tab="promos">Promocje</span>
+                        <span class="products__sep">|</span>
+                        <span class="products__tab" data-tab="new">Nowości</span>
+                        <span class="products__sep">|</span>
+                        <span class="products__tab" data-tab="best">Bestsellery</span>
+                    </div>
+                    <a href="#" class="products__all">Zobacz wszystkie</a>
+                </div>
+                <div class="products__loading" aria-hidden="true">
+                    <div class="spinner-border text-secondary" role="status" aria-label="Ładowanie"></div>
+                </div>
+                <div class="products__slider">
+                    <!-- sample product cards -->
+                    <div class="product">
+                        <div class="product__img position-relative">
+                            <div class="product__badges">
+                                <span class="product__badges-item product__badges-item--magenta">BESTSELLER</span>
+                                <span class="product__badges-item product__badges-item--green">NOWOŚĆ</span>
+                            </div>
+                            <img loading="lazy" src="https://picsum.photos/id/1025/500/600" alt="product"
+                                class="img-fluid">
+                            <button class="product__like" aria-label="Dodaj do ulubionych"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                                        stroke="currentColor" />
+                                </svg>
+                            </button>
+                            <button class="product__add" aria-label="Dodaj do koszyka"><svg width="20" height="20"
+                                    viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.66667 10L6.66667 6.66667C6.66667 4.82572 8.15906 3.33333 10 3.33333V3.33333C11.841 3.33333 13.3333 4.82572 13.3333 6.66667L13.3333 10"
+                                        stroke="white" stroke-linecap="round" />
+                                    <path
+                                        d="M3.02768 11.1678C3.17276 9.42692 3.24529 8.55647 3.81938 8.02824C4.39347 7.5 5.26693 7.5 7.01386 7.5H12.9861C14.7331 7.5 15.6065 7.5 16.1806 8.02824C16.7547 8.55647 16.8272 9.42692 16.9723 11.1678L17.3195 15.3339C17.404 16.3474 17.4462 16.8542 17.1491 17.1771C16.852 17.5 16.3435 17.5 15.3264 17.5H4.6736C3.65655 17.5 3.14802 17.5 2.85092 17.1771C2.55382 16.8542 2.59605 16.3474 2.68051 15.3339L3.02768 11.1678Z"
+                                        stroke="white" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="product__body">
+                            <a class="product__title" href="#">Półbuty mokasyny na grubej podeszwie<span></span></a>
+                            <div class="product__meta">Zapato | Dostępny</div>
+                            <div class="product__price">350,10 zł</div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product__img position-relative">
+                            <div class="product__badges">
+                                <span class="product__badges-item product__badges-item--red">PROMOCJA</span>
+                            </div>
+                            <img loading="lazy" src="https://picsum.photos/id/103/500/600" alt="product"
+                                class="img-fluid">
+                            <button class="product__like" aria-label="Dodaj do ulubionych"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                                        stroke="currentColor" />
+                                </svg>
+                            </button>
+                            <button class="product__add" aria-label="Dodaj do koszyka"><svg width="20" height="20"
+                                    viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.66667 10L6.66667 6.66667C6.66667 4.82572 8.15906 3.33333 10 3.33333V3.33333C11.841 3.33333 13.3333 4.82572 13.3333 6.66667L13.3333 10"
+                                        stroke="white" stroke-linecap="round" />
+                                    <path
+                                        d="M3.02768 11.1678C3.17276 9.42692 3.24529 8.55647 3.81938 8.02824C4.39347 7.5 5.26693 7.5 7.01386 7.5H12.9861C14.7331 7.5 15.6065 7.5 16.1806 8.02824C16.7547 8.55647 16.8272 9.42692 16.9723 11.1678L17.3195 15.3339C17.404 16.3474 17.4462 16.8542 17.1491 17.1771C16.852 17.5 16.3435 17.5 15.3264 17.5H4.6736C3.65655 17.5 3.14802 17.5 2.85092 17.1771C2.55382 16.8542 2.59605 16.3474 2.68051 15.3339L3.02768 11.1678Z"
+                                        stroke="white" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="product__body">
+                            <a class="product__title" href="#">Półbuty skóra naturalna - model 258<span></span></a>
+                            <div class="product__meta">Zapato | Dostępny</div>
+                            <div class="product__price">350,10 zł</div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product__img position-relative">
+                            <img loading="lazy" src="https://picsum.photos/id/104/500/600" alt="product"
+                                class="img-fluid">
+                            <button class="product__like" aria-label="Dodaj do ulubionych"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                                        stroke="currentColor" />
+                                </svg>
+                            </button>
+                            <button class="product__add" aria-label="Dodaj do koszyka"><svg width="20" height="20"
+                                    viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.66667 10L6.66667 6.66667C6.66667 4.82572 8.15906 3.33333 10 3.33333V3.33333C11.841 3.33333 13.3333 4.82572 13.3333 6.66667L13.3333 10"
+                                        stroke="white" stroke-linecap="round" />
+                                    <path
+                                        d="M3.02768 11.1678C3.17276 9.42692 3.24529 8.55647 3.81938 8.02824C4.39347 7.5 5.26693 7.5 7.01386 7.5H12.9861C14.7331 7.5 15.6065 7.5 16.1806 8.02824C16.7547 8.55647 16.8272 9.42692 16.9723 11.1678L17.3195 15.3339C17.404 16.3474 17.4462 16.8542 17.1491 17.1771C16.852 17.5 16.3435 17.5 15.3264 17.5H4.6736C3.65655 17.5 3.14802 17.5 2.85092 17.1771C2.55382 16.8542 2.59605 16.3474 2.68051 15.3339L3.02768 11.1678Z"
+                                        stroke="white" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="product__body">
+                            <a class="product__title" href="#">Półbuty mokasyny na grubej podeszwie<span></span></a>
+                            <div class="product__meta">Zapato | Dostępny</div>
+                            <div class="product__price">350,10 zł</div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product__img position-relative">
+                            <img loading="lazy" src="https://picsum.photos/id/1050/500/600" alt="product"
+                                class="img-fluid">
+                            <button class="product__like" aria-label="Dodaj do ulubionych"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                                        stroke="currentColor" />
+                                </svg>
+                            </button>
+                            <button class="product__add" aria-label="Dodaj do koszyka"><svg width="20" height="20"
+                                    viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.66667 10L6.66667 6.66667C6.66667 4.82572 8.15906 3.33333 10 3.33333V3.33333C11.841 3.33333 13.3333 4.82572 13.3333 6.66667L13.3333 10"
+                                        stroke="white" stroke-linecap="round" />
+                                    <path
+                                        d="M3.02768 11.1678C3.17276 9.42692 3.24529 8.55647 3.81938 8.02824C4.39347 7.5 5.26693 7.5 7.01386 7.5H12.9861C14.7331 7.5 15.6065 7.5 16.1806 8.02824C16.7547 8.55647 16.8272 9.42692 16.9723 11.1678L17.3195 15.3339C17.404 16.3474 17.4462 16.8542 17.1491 17.1771C16.852 17.5 16.3435 17.5 15.3264 17.5H4.6736C3.65655 17.5 3.14802 17.5 2.85092 17.1771C2.55382 16.8542 2.59605 16.3474 2.68051 15.3339L3.02768 11.1678Z"
+                                        stroke="white" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="product__body">
+                            <a class="product__title" href="#">Półbuty skóra naturalna - model 258<span></span></a>
+                            <div class="product__meta">Zapato | Dostępny</div>
+                            <div class="product__price">350,10 zł</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter__content">
+                    <img src="./assets/images/newsletter-decoration.png" alt="newsletter" class="newsletter__img">
+                    <div class="newsletter__text">
+                        <h3>Chcesz otrzymać <span>5%</span> zniżki na swoje zakupy?</h3>
+                        <p>Zapisz się do naszego newslettera i bądź na bieżąco z nowościami.</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <div class="newsletter-form__group">
+                            <input type="email" class="newsletter-form__input" placeholder="Twój adres email">
+                            <button class="newsletter-form__btn" type="submit" aria-label="Zapisz się do newslettera">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.7241 7.18863L10.7241 8.84422L22.9458 8.84422L22.9458 21.0659L24.6014 21.0659L24.6014 7.18863L10.7241 7.18863Z"
+                                        fill="white" />
+                                    <path
+                                        d="M7.77472 25.1875L24.3696 8.59259L23.1982 7.42118L6.60331 24.0161L7.77472 25.1875Z"
+                                        fill="white" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="checkbox-input form-check-input" id="exampleCheck1">
+                            <label class="checkbox-label" for="exampleCheck1">Akceptuję <a>Regulamin</a> i <a>Politykę
+                                    Prywatności</a>.</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- Search overlay -->
+    <div class="search" id="search" aria-hidden="true">
+        <div class="search__backdrop"></div>
+        <div class="search__dialog">
+            <div class="search__content container">
+                <div class="search__header">
+                    <form class="search__form" role="search">
+                        <div class="search__group">
+                            <input type="text" class="search__input" name="q" placeholder="Wyszukaj" />
+                            <button class="search__submit" type="submit" aria-label="Szukaj">
+                                <svg width="20" height="20" viewBox="0 0 21 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="9.85745" cy="9.16663" r="5" stroke="#292929" />
+                                    <path d="M17.3575 16.6666L14.8575 14.1666" stroke="#292929"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    <button class="search__close" aria-label="Zamknij wyszukiwarkę"><svg width="25" height="25"
+                            viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_835_934)">
+                                <path
+                                    d="M15.854 9.354L12.708 12.5L15.854 15.646C16.049 15.841 16.049 16.158 15.854 16.353C15.756 16.451 15.628 16.499 15.5 16.499C15.372 16.499 15.244 16.45 15.146 16.353L12 13.207L8.854 16.353C8.756 16.451 8.628 16.499 8.5 16.499C8.372 16.499 8.244 16.45 8.146 16.353C7.951 16.158 7.951 15.841 8.146 15.646L11.292 12.5L8.146 9.354C7.951 9.159 7.951 8.842 8.146 8.647C8.341 8.452 8.658 8.452 8.853 8.647L11.999 11.793L15.145 8.647C15.34 8.452 15.657 8.452 15.852 8.647C16.047 8.842 16.047 9.159 15.852 9.354H15.854ZM24 12.5C24 19.117 18.617 24.5 12 24.5C5.383 24.5 0 19.117 0 12.5C0 5.883 5.383 0.5 12 0.5C18.617 0.5 24 5.883 24 12.5ZM23 12.5C23 6.435 18.065 1.5 12 1.5C5.935 1.5 1 6.435 1 12.5C1 18.565 5.935 23.5 12 23.5C18.065 23.5 23 18.565 23 12.5Z"
+                                    fill="#292929" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_835_934">
+                                    <rect width="24" height="24" fill="white" transform="translate(0 0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                </div>
+                <div class="search__body">
+                    <h2 class="search__title">Wyszukiwane produkty</h2>
+                    <div class="search__results">
+                        <div class="product">
+                            <div class="product__img position-relative">
+                                <img loading="lazy" src="https://picsum.photos/id/1050/500/600" alt="product"
+                                    class="img-fluid">
+                                <button class="product__like" aria-label="Dodaj do ulubionych"><svg width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                                            stroke="currentColor" />
+                                    </svg>
+                                </button>
+                                <button class="product__add" aria-label="Dodaj do koszyka"><svg width="20" height="20"
+                                        viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.66667 10L6.66667 6.66667C6.66667 4.82572 8.15906 3.33333 10 3.33333V3.33333C11.841 3.33333 13.3333 4.82572 13.3333 6.66667L13.3333 10"
+                                            stroke="white" stroke-linecap="round" />
+                                        <path
+                                            d="M3.02768 11.1678C3.17276 9.42692 3.24529 8.55647 3.81938 8.02824C4.39347 7.5 5.26693 7.5 7.01386 7.5H12.9861C14.7331 7.5 15.6065 7.5 16.1806 8.02824C16.7547 8.55647 16.8272 9.42692 16.9723 11.1678L17.3195 15.3339C17.404 16.3474 17.4462 16.8542 17.1491 17.1771C16.852 17.5 16.3435 17.5 15.3264 17.5H4.6736C3.65655 17.5 3.14802 17.5 2.85092 17.1771C2.55382 16.8542 2.59605 16.3474 2.68051 15.3339L3.02768 11.1678Z"
+                                            stroke="white" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product__body">
+                                <a class="product__title" href="#">Półbuty skóra naturalna - model
+                                    258<span></span></a>
+                                <div class="product__meta">Zapato | Dostępny</div>
+                                <div class="product__price">350,10 zł</div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product__img position-relative">
+                                <img loading="lazy" src="https://picsum.photos/id/1050/500/600" alt="product"
+                                    class="img-fluid">
+                                <button class="product__like" aria-label="Dodaj do ulubionych"><svg width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                                            stroke="currentColor" />
+                                    </svg>
+                                </button>
+                                <button class="product__add" aria-label="Dodaj do koszyka"><svg width="20" height="20"
+                                        viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.66667 10L6.66667 6.66667C6.66667 4.82572 8.15906 3.33333 10 3.33333V3.33333C11.841 3.33333 13.3333 4.82572 13.3333 6.66667L13.3333 10"
+                                            stroke="white" stroke-linecap="round" />
+                                        <path
+                                            d="M3.02768 11.1678C3.17276 9.42692 3.24529 8.55647 3.81938 8.02824C4.39347 7.5 5.26693 7.5 7.01386 7.5H12.9861C14.7331 7.5 15.6065 7.5 16.1806 8.02824C16.7547 8.55647 16.8272 9.42692 16.9723 11.1678L17.3195 15.3339C17.404 16.3474 17.4462 16.8542 17.1491 17.1771C16.852 17.5 16.3435 17.5 15.3264 17.5H4.6736C3.65655 17.5 3.14802 17.5 2.85092 17.1771C2.55382 16.8542 2.59605 16.3474 2.68051 15.3339L3.02768 11.1678Z"
+                                            stroke="white" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product__body">
+                                <a class="product__title" href="#">Półbuty skóra naturalna - model
+                                    258<span></span></a>
+                                <div class="product__meta">Zapato | Dostępny</div>
+                                <div class="product__price">350,10 zł</div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product__img position-relative">
+                                <img loading="lazy" src="https://picsum.photos/id/1050/500/600" alt="product"
+                                    class="img-fluid">
+                                <button class="product__like" aria-label="Dodaj do ulubionych"><svg width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                                            stroke="currentColor" />
+                                    </svg>
+                                </button>
+                                <button class="product__add" aria-label="Dodaj do koszyka"><svg width="20" height="20"
+                                        viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.66667 10L6.66667 6.66667C6.66667 4.82572 8.15906 3.33333 10 3.33333V3.33333C11.841 3.33333 13.3333 4.82572 13.3333 6.66667L13.3333 10"
+                                            stroke="white" stroke-linecap="round" />
+                                        <path
+                                            d="M3.02768 11.1678C3.17276 9.42692 3.24529 8.55647 3.81938 8.02824C4.39347 7.5 5.26693 7.5 7.01386 7.5H12.9861C14.7331 7.5 15.6065 7.5 16.1806 8.02824C16.7547 8.55647 16.8272 9.42692 16.9723 11.1678L17.3195 15.3339C17.404 16.3474 17.4462 16.8542 17.1491 17.1771C16.852 17.5 16.3435 17.5 15.3264 17.5H4.6736C3.65655 17.5 3.14802 17.5 2.85092 17.1771C2.55382 16.8542 2.59605 16.3474 2.68051 15.3339L3.02768 11.1678Z"
+                                            stroke="white" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product__body">
+                                <a class="product__title" href="#">Półbuty skóra naturalna - model
+                                    258<span></span></a>
+                                <div class="product__meta">Zapato | Dostępny</div>
+                                <div class="product__price">350,10 zł</div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product__img position-relative">
+                                <img loading="lazy" src="https://picsum.photos/id/1050/500/600" alt="product"
+                                    class="img-fluid">
+                                <button class="product__like" aria-label="Dodaj do ulubionych"><svg width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z"
+                                            stroke="currentColor" />
+                                    </svg>
+                                </button>
+                                <button class="product__add" aria-label="Dodaj do koszyka"><svg width="20" height="20"
+                                        viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.66667 10L6.66667 6.66667C6.66667 4.82572 8.15906 3.33333 10 3.33333V3.33333C11.841 3.33333 13.3333 4.82572 13.3333 6.66667L13.3333 10"
+                                            stroke="white" stroke-linecap="round" />
+                                        <path
+                                            d="M3.02768 11.1678C3.17276 9.42692 3.24529 8.55647 3.81938 8.02824C4.39347 7.5 5.26693 7.5 7.01386 7.5H12.9861C14.7331 7.5 15.6065 7.5 16.1806 8.02824C16.7547 8.55647 16.8272 9.42692 16.9723 11.1678L17.3195 15.3339C17.404 16.3474 17.4462 16.8542 17.1491 17.1771C16.852 17.5 16.3435 17.5 15.3264 17.5H4.6736C3.65655 17.5 3.14802 17.5 2.85092 17.1771C2.55382 16.8542 2.59605 16.3474 2.68051 15.3339L3.02768 11.1678Z"
+                                            stroke="white" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product__body">
+                                <a class="product__title" href="#">Półbuty skóra naturalna - model
+                                    258<span></span></a>
+                                <div class="product__meta">Zapato | Dostępny</div>
+                                <div class="product__price">350,10 zł</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search__footer">
+                    <a class="search__more" href="#">Pokaż wszystkie</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Cart drawer -->
     <div class="cart" id="cart" aria-hidden="true">
