@@ -73,6 +73,7 @@
         height: 44px;
         padding: 10px 20px;
         line-height: 16px;
+        color: @text-color;
         border: 0;
         outline: 0;
         width: 100%;
@@ -133,6 +134,39 @@
                 text-decoration: underline;
             }
         }
+    }
+
+    /* Inline validation tooltip */
+    &__error {
+        position: absolute;
+        left: 0;
+        bottom: 100%;
+        transform: translateY(-8px);
+        background: #fdecec;
+        color: #c1121f;
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, .1);
+        display: none;
+        align-items: center;
+        gap: 8px;
+        z-index: 10;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 24px;
+            border-width: 8px 6px 0 6px;
+            border-style: solid;
+            border-color: #fdecec transparent transparent transparent;
+        }
+    }
+
+    &__group.is-invalid .newsletter-form__error {
+        display: inline-flex;
     }
 }
 
