@@ -58,63 +58,23 @@ import "../../assets/less/main.less";
     const $products = $(".products__slider .product, .search__results .product");
     if ($products.length === 0) return;
 
-    const imagePairs = [
-      {
-        main: "/assets/images/products/product-1-1.png",
-        hover: "/assets/images/products/product-1-2.png",
-      },
-      {
-        main: "/assets/images/products/product-2-1.png",
-        hover: "/assets/images/products/product-2-2.png",
-      },
-    ];
-
-    $products.each(function (idx) {
+    $products.each(function () {
       const $card = $(this);
-      const pair = imagePairs[idx % imagePairs.length];
-
-      // Ensure two images: main + hover
-      const $imgWrap = $card.find('.product__img');
-      if ($imgWrap.length) {
-        // Replace main image src and add hover overlay
-        let $mainImg = $imgWrap.find('img').first();
-        if ($mainImg.length === 0) {
-          $mainImg = $('<img>', { class: 'img-fluid' }).appendTo($imgWrap);
-        }
-        $mainImg.addClass('product__img-main').attr('src', pair.main).attr('loading', 'lazy');
-        // Add hover image if missing
-        if ($imgWrap.find('img.product__img-hover').length === 0) {
-          $('<img>', {
-            class: 'img-fluid product__img-hover',
-            src: pair.hover,
-            loading: 'lazy',
-            alt: $mainImg.attr('alt') || 'product hover',
-          }).appendTo($imgWrap);
-        } else {
-          $imgWrap.find('img.product__img-hover').attr('src', pair.hover);
-        }
-      }
-
-      // If product has PROMOCJA badge, convert price block to promo layout
+      // Promo layout based on badge
       const isPromo = $card.find('.product__badges-item--red').length > 0;
       if (isPromo) {
         $card.addClass('product--promo');
         const $body = $card.find('.product__body');
         if ($body.length) {
-          // Remove any existing price block
           $body.find('.product__price').remove();
-
           const $priceRow = $('<div>', { class: 'product__price-row' });
           const $newPrice = $('<span>', { class: 'product__price-new', text: '350,10zł' });
           const $oldPrice = $('<span>', { class: 'product__price-old', text: '399,99zł' });
           $priceRow.append($newPrice, ' ', $oldPrice);
-
           const $note = $('<div>', {
             class: 'product__note',
             text: 'Najniższa cena z 30 dni przed obniżką: 399,99zł',
           });
-
-          // Insert at the end of body
           $body.append($priceRow, $note);
         }
       }
@@ -144,7 +104,7 @@ import "../../assets/less/main.less";
 
       if ($focusables.length === 0) {
         e.preventDefault();
-        const rootEl = $root.get(0);
+        const rootEl = $root.get(0); 
         if (rootEl) {
           $root.attr("tabindex", "-1");
           try {
