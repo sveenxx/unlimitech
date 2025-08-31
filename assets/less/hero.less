@@ -3,7 +3,7 @@
 
     &__slider {
         border-radius: @radius;
-        // overflow: hidden;
+        overflow: hidden;
     }
 
     &__slide {
@@ -101,6 +101,15 @@
     &__arrow--next {
         right: 48px;
     }
+}
+
+/* Prevent layout shift before slick initializes: show only first slide */
+.hero__slider:not(.slick-initialized) .hero__slide {
+    display: none;
+}
+
+.hero__slider:not(.slick-initialized) .hero__slide:first-child {
+    display: block;
 }
 
 @media screen and (max-width: 576px) {
