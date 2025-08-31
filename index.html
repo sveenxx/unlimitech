@@ -757,6 +757,337 @@
         </nav>
     </header>
 
+    <!-- Mobile Menu overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true"
+        aria-labelledby="mobileMenuHeading">
+        <div class="mobile-menu__backdrop"></div>
+        <div class="mobile-menu__panel">
+            <header class="mobile-menu__header">
+                <button class="mobile-menu__back d-none" type="button" aria-label="Wstecz">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M16.532 17.1959L11.0005 12.1031L16.5316 6.99995L17.1914 7.71506L12.4361 12.1024L17.191 16.4801L16.532 17.1959Z"
+                            fill="#292929" />
+                    </svg>
+                </button>
+                <h2 class="mobile-menu__heading" id="mobileMenuHeading" tabindex="-1">Menu</h2>
+                <button class="mobile-menu__close" aria-label="Zamknij menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 18.8492L18.8492 4L19.9099 5.06066L5.06066 19.9099L4 18.8492Z" fill="#292929" />
+                        <path d="M5.06055 4L19.9098 18.8492L18.8491 19.9099L3.99989 5.06066L5.06055 4Z"
+                            fill="#292929" />
+                    </svg>
+                </button>
+            </header>
+
+            <nav class="mobile-menu__nav" aria-labelledby="mobileMenuHeading">
+
+                <div class="mobile-menu__view mobile-menu__view--root is-active" id="mobileMenuRoot"
+                    aria-hidden="false">
+                    <ul class="mobile-menu__list list-unstyled">
+                        <li class="mobile-menu__item">
+                            <button class="mobile-menu__link" data-view="cats" data-title="Damskie buty skórzane"
+                                aria-controls="mobileMenuCats" aria-expanded="false" aria-haspopup="true">
+                                <span>Damskie buty skórzane</span>
+                                <span class="mobile-menu__caret">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                            fill="#292929" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </li>
+                        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Bony podarunkowe</a></li>
+                        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Nowości</a></li>
+                        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Bestsellery</a></li>
+                        <li class="mobile-menu__item"><a href="#" class="mobile-menu__link mobile-menu__link--sale">%
+                                Wyprzedaż
+                                %</a>
+                        </li>
+                        <li class="mobile-menu__item"><a href="#"
+                                class="mobile-menu__link mobile-menu__link--highlighted">Zaloguj / Zarejestruj</a>
+                        </li>
+                        <li class="mobile-menu__item"><a href="#"
+                                class="mobile-menu__link mobile-menu__link--highlighted">Schowek</a></li>
+                        <li class="mobile-menu__item">
+                            <button class="mobile-menu__link mobile-menu__link--highlighted" id="btn-mobile-cart">
+                                Koszyk
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mobile-menu__view mobile-menu__view--cats" id="mobileMenuCats" aria-hidden="true" hidden>
+                    <ul class="mobile-menu__list list-unstyled">
+                        <li class="mobile-menu__item"><button class="mobile-menu__link" data-view="subcats"
+                                data-cat="polbuty" data-title="Półbuty" aria-controls="mobileMenuSubcats"
+                                aria-expanded="false" aria-haspopup="true"><span>Półbuty</span><span
+                                    class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                            fill="#292929" />
+                                    </svg></span></button></li>
+                        <li class="mobile-menu__item"><button class="mobile-menu__link" data-view="subcats"
+                                data-cat="jazzowki" data-title="Jazzówki" aria-controls="mobileMenuSubcats"
+                                aria-expanded="false" aria-haspopup="true"><span>Jazzówki</span><span
+                                    class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                            fill="#292929" />
+                                    </svg></span></button></li>
+                        <li class="mobile-menu__item"><button class="mobile-menu__link" data-view="subcats"
+                                data-cat="czolenka" data-title="Czółenka" aria-controls="mobileMenuSubcats"
+                                aria-expanded="false" aria-haspopup="true"><span>Czółenka</span><span
+                                    class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                            fill="#292929" />
+                                    </svg></span></button></li>
+                        <li class="mobile-menu__item"><button class="mobile-menu__link" data-view="subcats"
+                                data-cat="baleriny" data-title="Baleriny" aria-controls="mobileMenuSubcats"
+                                aria-expanded="false" aria-haspopup="true"><span>Baleriny</span><span
+                                    class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                            fill="#292929" />
+                                    </svg></span></button></li>
+                        <li class="mobile-menu__item"><button class="mobile-menu__link" data-view="subcats"
+                                data-cat="sandaly" data-title="Sandały" aria-controls="mobileMenuSubcats"
+                                aria-expanded="false" aria-haspopup="true"><span>Sandały</span><span
+                                    class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                            fill="#292929" />
+                                    </svg></span></button></li>
+                        <li class="mobile-menu__item"><button class="mobile-menu__link" data-view="subcats"
+                                data-cat="klapki" data-title="Klapki" aria-controls="mobileMenuSubcats"
+                                aria-expanded="false" aria-haspopup="true"><span>Klapki</span><span
+                                    class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                            fill="#292929" />
+                                    </svg></span></button></li>
+                        <li class="mobile-menu__item"><button class="mobile-menu__link" data-view="subcats"
+                                data-cat="botki" data-title="Botki" aria-controls="mobileMenuSubcats"
+                                aria-expanded="false" aria-haspopup="true"><span>Botki</span><span
+                                    class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                            fill="#292929" />
+                                    </svg></span></button></li>
+                        <li class="mobile-menu__item"><button class="mobile-menu__link" data-view="subcats"
+                                data-cat="kozaki" data-title="Kozaki" aria-controls="mobileMenuSubcats"
+                                aria-expanded="false" aria-haspopup="true"><span>Kozaki</span><span
+                                    class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                            fill="#292929" />
+                                    </svg></span></button></li>
+                        <li class="mobile-menu__item"><button class="mobile-menu__link" data-view="subcats"
+                                data-cat="outlet" data-title="Outlet" aria-controls="mobileMenuSubcats"
+                                aria-expanded="false" aria-haspopup="true"><span>Outlet</span><span
+                                    class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                            fill="#292929" />
+                                    </svg></span></button></li>
+                    </ul>
+                </div>
+
+                <div class="mobile-menu__view mobile-menu__view--subcats" id="mobileMenuSubcats" aria-hidden="true"
+                    hidden>
+                    <div class="mobile-menu__subcats" data-cat="polbuty">
+                        <ul class="mobile-menu__list list-unstyled">
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">półbuty sznurowane</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">mokasyny</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">loafers</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">oxfordy</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">derby</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">brogsy</a></li>
+                            <li class="mobile-menu__item"><a href="#"
+                                    class="mobile-menu__link mobile-menu__link--showall">Pokaż wszystkie<span
+                                        class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                                fill="#292929" />
+                                        </svg></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="mobile-menu__subcats" data-cat="jazzowki">
+                        <ul class="mobile-menu__list list-unstyled">
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">jazzówki klasyczne</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">jazzówki skórzane</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">jazzówki zamszowe</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">jazzówki wiązane</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">jazzówki płaskie</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#"
+                                    class="mobile-menu__link mobile-menu__link--showall">Pokaż wszystkie<span
+                                        class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                                fill="#292929" />
+                                        </svg></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="mobile-menu__subcats" data-cat="czolenka">
+                        <ul class="mobile-menu__list list-unstyled">
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">czółenka na słupku</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">szpilki</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">czółenka na koturnie</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">czółenka bez pięty</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">czółenka na niskim
+                                    obcasie</a></li>
+                            <li class="mobile-menu__item"><a href="#"
+                                    class="mobile-menu__link mobile-menu__link--showall">Pokaż wszystkie<span
+                                        class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                                fill="#292929" />
+                                        </svg></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="mobile-menu__subcats" data-cat="baleriny">
+                        <ul class="mobile-menu__list list-unstyled">
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">baleriny klasyczne</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">baleriny skórzane</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">baleriny pointy</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">baleriny z paskiem</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">baleriny na koturnie</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#"
+                                    class="mobile-menu__link mobile-menu__link--showall">Pokaż wszystkie<span
+                                        class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                                fill="#292929" />
+                                        </svg></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="mobile-menu__subcats" data-cat="sandaly">
+                        <ul class="mobile-menu__list list-unstyled">
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">sandały na słupku</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">sandały płaskie</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">sandały na koturnie</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">sandały gladiatorki</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">sandały skórzane</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#"
+                                    class="mobile-menu__link mobile-menu__link--showall">Pokaż wszystkie<span
+                                        class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                                fill="#292929" />
+                                        </svg></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="mobile-menu__subcats" data-cat="klapki">
+                        <ul class="mobile-menu__list list-unstyled">
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">klapki płaskie</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">klapki na obcasie</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">klapki skórzane</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">mule</a></li>
+                            <li class="mobile-menu__item"><a href="#"
+                                    class="mobile-menu__link mobile-menu__link--showall">Pokaż wszystkie<span
+                                        class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                                fill="#292929" />
+                                        </svg></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="mobile-menu__subcats" data-cat="botki">
+                        <ul class="mobile-menu__list list-unstyled">
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">sztyblety</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">botki płaskie</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">botki na słupku</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">botki sznurowane</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">workery</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">botki ocieplane</a></li>
+                            <li class="mobile-menu__item"><a href="#"
+                                    class="mobile-menu__link mobile-menu__link--showall">Pokaż wszystkie<span
+                                        class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                                fill="#292929" />
+                                        </svg></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="mobile-menu__subcats" data-cat="kozaki">
+                        <ul class="mobile-menu__list list-unstyled">
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">kozaki za kolano</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">kozaki na słupku</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">kozaki płaskie</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">oficerki</a></li>
+                            <li class="mobile-menu__item"><a href="#"
+                                    class="mobile-menu__link mobile-menu__link--showall">Pokaż wszystkie<span
+                                        class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                                fill="#292929" />
+                                        </svg></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="mobile-menu__subcats" data-cat="outlet">
+                        <ul class="mobile-menu__list list-unstyled">
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">ostatnie sztuki</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">przecena -30%</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">przecena -50%</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">przecena -70%</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">kolekcje archiwalne</a>
+                            </li>
+                            <li class="mobile-menu__item"><a href="#"
+                                    class="mobile-menu__link mobile-menu__link--showall">Pokaż wszystkie<span
+                                        class="mobile-menu__caret"><svg width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.469 6.804L13.0004 11.8968L7.4694 17.0001L6.80957 16.285L11.5649 11.8976L6.81002 7.51988L7.469 6.804Z"
+                                                fill="#292929" />
+                                        </svg></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
