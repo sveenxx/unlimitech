@@ -87,6 +87,61 @@
         border-bottom: 1px solid @stroke-light;
     }
 
+    /* Contact/Social block in root view */
+    &__contact {
+        padding: 16px;
+    }
+
+    &__contact-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 0;
+
+        &:first-child {
+            margin-bottom: 12px;
+        }
+
+        a {
+            color: @text-color;
+        }
+    }
+
+    &__contact-icon {
+        width: 28px;
+        height: 28px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: @brand-primary;
+
+        svg {
+            display: block;
+        }
+    }
+
+    &__divider {
+        margin: 24px auto;
+        max-width: 168px;
+        opacity: 1;
+        border-top: 1px solid @stroke-light;
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+
+        a {
+            display: inline-flex;
+            color: @brand-primary;
+        }
+    }
+
     &__link {
         display: flex;
         align-items: center;
@@ -130,7 +185,7 @@
         display: block;
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 1200px) {
         display: none;
     }
 }

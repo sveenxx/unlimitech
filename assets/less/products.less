@@ -82,11 +82,26 @@
     &__img {
         background: @brand-light;
         border-radius: @radius;
+        position: relative;
 
         img {
             width: 100%;
             display: block;
             border-radius: @radius;
+        }
+
+        /* Support two-image hover swap */
+        .product__img-main {
+            display: block;
+        }
+
+        .product__img-hover {
+            display: block;
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity .25s ease-in-out;
+            z-index: 1;
         }
     }
 
@@ -109,7 +124,7 @@
     }
 
     &__meta {
-        color: #595959;
+        color: @muted;
         font-size: 13px;
         display: flex;
         align-items: center;
@@ -129,6 +144,7 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
+        z-index: 3;
     }
 
     &__badges-item {
@@ -197,6 +213,40 @@
         .product__add {
             transform: translateY(0);
         }
+
+        /* reveal hover image */
+        .product__img-hover {
+            opacity: 1;
+        }
+    }
+}
+
+/* Promo price layout */
+.product.product--promo {
+    .product__price-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .product__price-new {
+        background: @accent-red;
+        color: #fff;
+        font-weight: 700;
+        padding: 1px 4px;
+        border-radius: 2px;
+        font-size: 15px;
+    }
+
+    .product__price-old {
+        color: @muted;
+        text-decoration: line-through;
+        font-size: 15px;
+    }
+
+    .product__note {
+        color: @muted;
+        font-size: 12px;
     }
 }
 
@@ -221,7 +271,7 @@
     }
 
     /* width for slide to allow peeking next card */
-    .product {
+    .products__slider .product {
         width: 80vw;
     }
 }

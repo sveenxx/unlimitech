@@ -75,6 +75,7 @@
     color: #292929;
     font-weight: 400;
     font-size: 16px;
+    transition: color .2s ease;
 }
 
 .nav-link.text-danger {
@@ -161,10 +162,16 @@
         font-size: 16px;
         text-decoration: none;
         text-wrap: nowrap;
+        transition: color .2s ease;
 
         &--danger {
             color: @accent-red;
         }
+    }
+
+    /* Hover: brand color for desktop navbar links */
+    &__link:hover {
+        color: @brand-primary;
     }
 
 
@@ -185,6 +192,7 @@
         position: relative;
         padding: 4px;
         display: inline-flex;
+        transition: border-color .2s ease;
 
         span {
             width: 100%;
@@ -194,20 +202,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: background-color .2s ease;
         }
+    }
+
+    /* Hover: slightly darker chip and border for icon buttons */
+    &__icons-link:hover {
+        border-color: darken(@stroke-light, 10%);
+    }
+
+    &__icons-link:hover span {
+        background: darken(@bg-chip, 8%);
     }
 }
 
 @media screen and (max-width: 1200px) {
-    .search-form__input {
-        width: 0;
-        padding: 0;
-    }
-
-    .search-form {
-        .btn {
-            margin-left: 4px;
-        }
+    .main-nav {
+        padding: 24px 0 16px;
     }
 
     .navbar__list {
