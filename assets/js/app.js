@@ -34,20 +34,33 @@ import "../../assets/less/main.less";
     });
   };
 
-  const initProductsSlider = () => {
+  const initProductsSlider = () => { 
     $(".products__slider").slick({
       slidesToShow: 4,
-      slidesToScroll: 1,
+      slidesToScroll: 1, 
       arrows: true,
+      prevArrow: `<button class="products__arrow products__arrow--prev" aria-label="Poprzedni slajd"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="35.5" y="35.5" width="35" height="35" rx="17.5" transform="rotate(-180 35.5 35.5)" stroke="white"/>
+<path d="M16.7005 24L17.4354 23.2651L12.01 17.8396L17.4354 12.4141L16.7005 11.6792L10.5401 17.8396L16.7005 24Z" fill="white"/>
+<path d="M26 17.3192L11.2663 17.3192L11.2663 18.3592L26 18.3592L26 17.3192Z" fill="white"/>
+</svg>
+</button>`,
+      nextArrow: `<button class="products__arrow products__arrow--next" aria-label="Następny slajd"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="white"/>
+<path d="M19.2995 12L18.5646 12.7349L23.99 18.1604L18.5646 23.5859L19.2995 24.3208L25.4599 18.1604L19.2995 12Z" fill="white"/>
+<path d="M10 18.6808L24.7337 18.6808L24.7337 17.6408L10 17.6408L10 18.6808Z" fill="white"/>
+</svg>
+</button>`,
       dots: true,
       responsive: [
-        { breakpoint: 1200, settings: { slidesToShow: 3 } },
-        { breakpoint: 992, settings: { slidesToShow: 2 } },
+        { breakpoint: 1200, settings: { slidesToShow: 3, arrows: true } },
+        { breakpoint: 992, settings: { slidesToShow: 2, arrows: true } },
         {
           breakpoint: 600,
           settings: {
             slidesToShow: 1,
             centerMode: false,
+            arrows: false,
           },
         },
       ],
@@ -78,6 +91,19 @@ import "../../assets/less/main.less";
           $body.append($priceRow, $note);
         }
       }
+    });
+  };
+
+  const initProductsTabs = () => {
+    const $section = $(".products");
+    if ($section.length === 0) return;
+    const $tabs = $section.find('.products__tab');
+
+    $section.on('click', '.products__tab', function () {
+      const $tab = $(this);
+      if ($tab.hasClass('is-active')) return;
+      $tabs.removeClass('is-active').attr('aria-selected', 'false');
+      $tab.addClass('is-active').attr('aria-selected', 'true');
     });
   };
 
@@ -517,6 +543,7 @@ import "../../assets/less/main.less";
   $(function () {
     initHeroSlider();
     initProductCards();
+    initProductsTabs();
     initMobileMenu();
     initCartDrawer();
     initProductsSlider();
