@@ -1,0 +1,134 @@
+.hero {
+    padding: 20px 0 10px;
+
+    &__slider {
+        border-radius: @radius;
+        // overflow: hidden;
+    }
+
+    &__slide {
+        position: relative;
+        height: 520px;
+        background-size: cover;
+        background-position: center;
+        border-radius: @radius;
+
+        &:after {
+            content: "";
+            position: absolute;
+            border-radius: @radius;
+            inset: 0;
+            background: radial-gradient(rgba(168, 168, 168, .45), rgba(45, 45, 45, .55));
+        }
+    }
+
+    &__content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 48px;
+        width: 100%;
+        z-index: 2;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    &__content-text {
+        max-width: 615px;
+
+        h2 {
+            font-size: 40px;
+            line-height: 62px;
+            font-weight: 900;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 28px;
+            color: #EEEEEE;
+            margin: 0;
+        }
+    }
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 4px 16px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        background-color: transparent;
+        border-radius: 8px;
+        border: 1px solid white;
+        height: 40px;
+        transition: background-color 0.2s ease-out;
+    }
+
+
+    &__btn:hover {
+        background-color: #292929;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: calc(50% - 18px);
+        width: 36px;
+        height: 36px;
+        border: none;
+        background: none;
+        padding: 0;
+        color: #fff;
+        z-index: 2;
+        border-radius: 50%;
+        transition: background-color 0.2s ease-out;
+    }
+
+    &__arrow:hover {
+        background-color: #292929;
+    }
+
+    &__arrow--prev {
+        left: 48px;
+    }
+
+    &__arrow--next {
+        right: 48px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero {
+        &__arrow {
+            display: none !important;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero {
+        &__content {
+            padding: 20px 16px;
+        }
+
+        &__content-text {
+            max-width: 615px;
+
+            h2 {
+                font-size: 28px;
+                line-height: normal;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: normal;
+            }
+        }
+    }
+}
