@@ -1,0 +1,131 @@
+.search {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    visibility: hidden;
+
+    &.is-open {
+        visibility: visible;
+    }
+
+    &__backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, .4);
+    }
+
+    &__dialog {
+        position: relative;
+        padding: 39px 0 24px 0;
+        background: #fff;
+    }
+
+    &__header {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+
+
+    &__close {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+    }
+
+    &__form {
+        width: 100%;
+    }
+
+    &__group {
+        border: 1px solid @stroke-light;
+        border-radius: 80px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        height: 44px;
+    }
+
+    &__input {
+        flex: 1 1 auto;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0 20px;
+        font-size: 12px;
+        color: @text-color;
+    }
+
+    &__submit {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: none;
+        background: @bg-chip;
+        display: flex;
+        margin-right: 4px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    &__body {
+        container-type: inline-size;
+    }
+
+
+    &__results {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 11px;
+    }
+
+    @container (width < 992px) {
+        &__results {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @container (width < 768px) {
+        &__results {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__header {
+        padding-bottom: 24px;
+    }
+
+    &__title {
+        margin-bottom: 32px;
+        font-size: 32px;
+        font-weight: 800;
+        color: @text-color;
+    }
+
+    &__footer {
+        margin-top: 53px;
+        text-align: center;
+    }
+
+    &__more {
+        font-size: 15px;
+        color: @text-color;
+        font-weight: 500;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .product {
+        margin: 0;
+    }
+
+
+}
