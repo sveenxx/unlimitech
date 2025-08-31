@@ -1,0 +1,149 @@
+.categories {
+    padding: 32px 0 16px;
+
+    h2 {
+        .section-title();
+        font-weight: 800;
+        font-size: 32px;
+    }
+
+    &__content {
+        column-count: 4;
+        column-gap: 11px;
+    }
+
+    &__card {
+        position: relative;
+        display: grid;
+        grid-template-rows: auto min-content auto;
+        width: 100%;
+        border-radius: @radius;
+        overflow: hidden;
+        background: #fff;
+        break-inside: avoid;
+        margin-bottom: 16px;
+    }
+
+    &__img {
+        grid-area: 1 / 1 / 4 / 2;
+        background: @brand-light;
+        height: 250px;
+        transition: transform 0.3s ease-in-out;
+        transform-origin: 100% 75%;
+
+        img {
+            .img-cover;
+            display: block;
+        }
+
+        &::before {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(50% 50% at 50% 50%, rgba(168, 168, 168, .45) 0%, rgba(45, 45, 45, .55) 100%);
+        }
+    }
+
+    .categories__card:nth-child(1) .categories__img,
+    .categories__card:nth-child(4) .categories__img,
+    .categories__card:nth-child(5) .categories__img,
+    .categories__card:nth-child(8) .categories__img {
+        height: 430px;
+    }
+
+    &__title {
+        grid-area: 2 / 1 / 3 / 2;
+        color: #fff;
+        font-weight: 900;
+        text-align: center;
+        font-size: 36px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        z-index: 1;
+
+        span {
+            position: absolute;
+            inset: 0;
+        }
+    }
+
+
+    &__title:hover {
+        opacity: 1;
+    }
+
+    &__card:has(.categories__title:hover) .categories__img {
+
+        transform: scale(1.1);
+
+        &::before {
+            opacity: 0.65;
+        }
+    }
+
+
+    &__title:focus {
+        opacity: 1;
+    }
+
+    &__card:has(.categories__title:focus) .categories__img {
+
+        transform: scale(1.1);
+
+        &::before {
+            opacity: 0.65;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .categories {
+        padding: 24px 0 12px;
+
+        &__content {
+            column-count: unset;
+            column-gap: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        &__card {
+            margin-bottom: 0;
+            border-radius: 12px;
+        }
+
+        &__img {
+            height: auto;
+            aspect-ratio: 1 / 1;
+            transform: none;
+
+            &::before {
+                opacity: 0.65; // pokaż filtr na mobile
+            }
+        }
+
+        // unifikacja wysokości dla kafli, które na desktopie są wyższe
+        .categories__card:nth-child(1) .categories__img,
+        .categories__card:nth-child(4) .categories__img,
+        .categories__card:nth-child(5) .categories__img,
+        .categories__card:nth-child(8) .categories__img {
+            height: auto;
+            aspect-ratio: 1 / 1;
+        }
+
+        &__title {
+            opacity: 1; // pokazuj nazwę stale na mobile
+        }
+    }
+}
+
+@media screen and (max-width: 964px) {
+    .categories {
+        &__title {
+            font-size: 18px;
+        }
+    }
+}
